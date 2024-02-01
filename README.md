@@ -107,3 +107,25 @@ curl -i -X PUT -H 'Accept: application/json' \
     -H 'Content-type: application/json' http://localhost:3000/quotes/15 \
     --data '{"quote":"update me! my ID is 15","author":"anonymous"}'
 ```
+
+---
+
+add DELETE
+
+update services/quotes.js to add deleteQuote
+update routes/quotes.js to handle `router.delete()`
+
+add a test quote to delete:
+
+```
+curl -i -X POST -H 'Accept: application/json' \
+    -H 'Content-type: application/json' http://localhost:3000/quotes \
+    --data '{"quote":"delete me! my ID is 16","author":"anonymous"}'
+```
+
+delete the quote with the id of 16
+
+```
+curl -i -X DELETE -H 'Accept: application/json' \
+    -H 'Content-type: application/json' http://localhost:3000/quotes/16
+```

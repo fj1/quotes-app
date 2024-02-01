@@ -37,4 +37,14 @@ router.put('/:id', function (req, res, next) {
   }
 });
 
+// handle DELETE requests
+router.delete('/:id', function (req, res, next) {
+  try {
+    res.json(quotes.deleteQuote(req.params.id));
+  } catch (err) {
+    console.error(`Error while deleting a quote `, err.message);
+    next(err);
+  }
+});
+
 module.exports = router;

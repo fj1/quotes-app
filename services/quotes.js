@@ -81,4 +81,15 @@ function update(id, quoteObj) {
   return { message };
 }
 
-module.exports = { create, getMultiple, update };
+function deleteQuote(id) {
+  const result = db.run('DELETE FROM quote WHERE id=@id', { id });
+
+  let message = 'Error in deleting quote';
+  if (result.changes) {
+    message = 'Quote deleted successfully';
+  }
+
+  return { message };
+}
+
+module.exports = { create, deleteQuote, getMultiple, update };
