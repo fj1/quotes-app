@@ -17,7 +17,7 @@ function getMultiple(page = 1) {
   };
 }
 
-function validateCreate(quote) {
+function validateIncomingQuoteObj(quote) {
   let messages = [];
 
   console.log(quote);
@@ -43,7 +43,7 @@ function validateCreate(quote) {
 }
 
 function create(quoteObj) {
-  validateCreate(quoteObj);
+  validateIncomingQuoteObj(quoteObj);
 
   // if validation passed, run the insert query
   const { quote, author } = quoteObj;
@@ -60,4 +60,25 @@ function create(quoteObj) {
   return { message };
 }
 
-module.exports = { create, getMultiple };
+function update(id, quoteObj) {
+  validateIncomingQuoteObj(quoteObj);
+
+  const { quote, author } = quoteObj;
+
+  // COALESCE function keeps the current value if there is no new value (null)
+  // we shouldn't need COALESCE because of our validation but we might iterate on updating a quote later
+  // for example, adding a UI where the user can update a single field
+  const result = db.run(
+    'UPDATE quote SET quote=@quote, author=@author WHERE id=@id',
+    { id, quote, author }
+  );
+
+  let message = 'Error in updating quote';
+  if (result.changes) {
+    message = 'Quote updated successfully';
+  }
+
+  return { message };
+}
+
+module.exports = { create, getMultiple, update };

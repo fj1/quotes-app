@@ -82,6 +82,28 @@ To view the DB in VS Code with the SQLite extension:
 In the Explorer sidebar, there is a SQLite Explorer section (it might be collapsed).
 Open that section
 Open quotes.db
-Right click on 'quote' and select 'Show Table'
+Right click on 'quote' and select 'Show Table' (or click the triangle next to 'quote)
 
 ---
+
+add PUT (update)
+
+added a test quote that we'll update
+
+```
+curl -i -X POST -H 'Accept: application/json' \
+    -H 'Content-type: application/json' http://localhost:3000/quotes \
+    --data '{"quote":"update me! my ID is","author":"anonymous"}'
+```
+
+checked the DB, and this quote's ID is 15
+so we'll request an update that changes the description
+
+update services/quotes.js to add a PUT
+update routes/quotes.js to handle `router.put()`
+
+```
+curl -i -X PUT -H 'Accept: application/json' \
+    -H 'Content-type: application/json' http://localhost:3000/quotes/15 \
+    --data '{"quote":"update me! my ID is 15","author":"anonymous"}'
+```

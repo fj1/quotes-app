@@ -27,4 +27,14 @@ router.post('/', function (req, res, next) {
   }
 });
 
+// handle PUT requests
+router.put('/:id', function (req, res, next) {
+  try {
+    res.json(quotes.update(req.params.id, req.body));
+  } catch (err) {
+    console.error(`Error while updating a quote `, err.message);
+    next(err);
+  }
+});
+
 module.exports = router;
