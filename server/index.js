@@ -1,7 +1,7 @@
 // index.js is our server
 const express = require('express');
 const app = express();
-const port = 3000 || process.env.port;
+const port = 3001 || process.env.port;
 const quotesRouter = require('./routes/quotes');
 
 // tell Express to allow JSON in the bodies of a request

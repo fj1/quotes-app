@@ -138,3 +138,18 @@ curl -i -X DELETE -H 'Accept: application/json' \
 
 prep for adding UI
 move all files except .gitignore and the README to a new directory, /server
+
+---
+
+in root dir, ran `npx create-react-app client`
+
+in quote-app/client, run `npm start` and visit http://localhost:3000/
+
+updated package.json at root level to use concurrently for installing and starting the backend and client at the same time
+in root dir, `npm i concurrently` https://www.npmjs.com/package/concurrently
+
+update server port to use 3001 (because client is using 3000)
+
+update server package.json to have a `start` script
+
+run `npm start` at root level, looking good so far 🎉

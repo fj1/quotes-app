@@ -1,0 +1,16 @@
+{
+  "name": "quote-app",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "setup:client": "npm install --prefix client",
+    "setup:server": "npm install --prefix server",
+    "setup:all": "concurrently --names \"CLIENT,SERVER\" -c \"auto\" \"npm run setup:client\" \"npm run setup:server\"",
+    "start:client": "npm run start --prefix client",
+    "start:server": "npm run start --prefix server",
+    "start": "concurrently --names \"CLIENT,SERVER\" -c \"auto\" \"npm run start:client\" \"npm run start:server\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
