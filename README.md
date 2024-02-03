@@ -1,5 +1,9 @@
 based on https://geshan.com.np/blog/2021/10/nodejs-sqlite/
 
+start BE with `node index.js` in the server directory, then visit http://localhost:3000/quotes
+
+---
+
 npm init
 npm i sqlite3
 
@@ -129,3 +133,8 @@ delete the quote with the id of 16
 curl -i -X DELETE -H 'Accept: application/json' \
     -H 'Content-type: application/json' http://localhost:3000/quotes/16
 ```
+
+---
+
+prep for adding UI
+move all files except .gitignore and the README to a new directory, /server
