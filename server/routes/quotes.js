@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 const quotes = require('../services/quotes');
 
-// handle GETs on the `/` route
+// handle GETs on the quotes `/` route
 router.get('/', function (req, res, next) {
   try {
     res.json(quotes.getMultiple(req.query.page));

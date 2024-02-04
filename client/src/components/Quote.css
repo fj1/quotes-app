@@ -1,0 +1,9 @@
+.quote-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.author {
+  align-self: flex-end;
+}

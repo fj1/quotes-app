@@ -159,3 +159,11 @@ run `npm start` at root level, looking good so far 🎉
 ---
 
 deleted Create React App stuff
+
+---
+
+added cors package https://www.npmjs.com/package/cors
+
+add QuoteSection.js and Quote.js
+add fetch to GET all quotes
+some basic styling
