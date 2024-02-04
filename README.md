@@ -2,6 +2,8 @@ based on https://geshan.com.np/blog/2021/10/nodejs-sqlite/
 
 start BE with `node index.js` in the server directory, then visit http://localhost:3000/quotes
 
+for BE + UI, run `npm start` at root level
+
 ---
 
 npm init
@@ -153,3 +155,7 @@ update server port to use 3001 (because client is using 3000)
 update server package.json to have a `start` script
 
 run `npm start` at root level, looking good so far 🎉
+
+---
+
+deleted Create React App stuff
