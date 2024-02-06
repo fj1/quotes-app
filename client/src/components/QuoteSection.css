@@ -1,3 +1,5 @@
 .quote-section {
   font-family: sans-serif;
+  flex: 1;
+  overflow: auto;
 }

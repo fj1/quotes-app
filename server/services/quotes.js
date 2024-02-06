@@ -9,7 +9,12 @@ function getMultiple(page = 1) {
     offset,
     config.listPerPage,
   ]);
-  const meta = { page };
+
+  const totalNumOfPages = db.getTotalNumOfPages();
+  const meta = {
+    page: Number(page),
+    totalNumOfPages,
+  };
 
   return {
     data,
@@ -19,8 +24,6 @@ function getMultiple(page = 1) {
 
 function validateIncomingQuoteObj(quote) {
   let messages = [];
-
-  console.log(quote);
 
   if (!quote) {
     messages.push('No object is provided');

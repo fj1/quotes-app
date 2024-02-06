@@ -4,6 +4,15 @@ start BE with `node index.js` in the server directory, then visit http://localho
 
 for BE + UI, run `npm start` at root level
 
+ideas for further iterations
+
+- button to show a random quote
+- button to show all quotes
+- styling
+- UI for adding a quote
+- UI for deleting a quote
+- clean up README
+
 ---
 
 npm init
@@ -167,3 +176,19 @@ added cors package https://www.npmjs.com/package/cors
 add QuoteSection.js and Quote.js
 add fetch to GET all quotes
 some basic styling
+
+---
+
+add pagination
+
+BE changes to get total number of pages
+
+UI
+
+- lift state up
+- add Footer component
+  - shows the current page
+  - add forward and back buttons
+  - the forward and back buttons disable when the user is at the first/last page
+
+---

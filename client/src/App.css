@@ -3,6 +3,9 @@
   margin: 0 auto;
   min-width: 500px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 header {
